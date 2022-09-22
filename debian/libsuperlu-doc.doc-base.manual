@@ -1,0 +1,7 @@
+Document: libsuperlu-manual
+Title: SuperLU Reference Manual
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libsuperlu-dev/html/index.html
+Files: /usr/share/doc/libsuperlu-dev/html/*

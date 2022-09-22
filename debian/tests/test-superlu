@@ -1,0 +1,8 @@
+TESTDIR=testdir
+
+mkdir $TESTDIR
+cd $TESTDIR
+# cmake mutters about static library and BLAS, so dump that noise into cmake.err
+cmake .. 2>cmake.err
+ctest
+

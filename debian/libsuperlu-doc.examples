@@ -1,0 +1,4 @@
+EXAMPLE/*.c
+EXAMPLE/*.rua
+EXAMPLE/README
+EXAMPLE/Makefile

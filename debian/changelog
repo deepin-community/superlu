@@ -1,0 +1,196 @@
+superlu (5.3.0+dfsg1-2) unstable; urgency=medium
+
+  * upload SuperLU 5.3 to unstable
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 16 Oct 2021 00:08:35 +0200
+
+superlu (5.3.0+dfsg1-1exp1) experimental; urgency=medium
+
+  * New upstream release.
+  * Standards-Version: 4.6.0
+
+ -- Drew Parsons <dparsons@debian.org>  Wed, 06 Oct 2021 17:05:28 +0200
+
+superlu (5.2.2+dfsg1-2) unstable; urgency=medium
+
+  * upload SuperLU 5.2.2 to unstable.
+
+ -- Drew Parsons <dparsons@debian.org>  Fri, 23 Oct 2020 17:46:16 +0800
+
+superlu (5.2.2+dfsg1-1exp1) experimental; urgency=medium
+
+  * update debian/watch and Homepage to
+    https://github.com/xiaoyeli/superlu
+  * New upstream release.
+  * Standards-Version: 4.5.0
+  * debhelper compatibility level 13.
+    Build-Depends: debhelper-compat (= 13)
+  * update internal BLAS configuration to enable_internal_blaslib=OFF
+    with -DTPL_BLAS_LIBRARIES=blas (common BLAS library, specific
+    fast implementation controlled by blas alternatives)
+  * libsuperlu-dev provides cmake and pkgconfig config files
+  * skip RPATH: don't embed RUNPATH into shared library
+
+ -- Drew Parsons <dparsons@debian.org>  Tue, 20 Oct 2020 18:30:14 +0800
+
+superlu (5.2.1+dfsg1-4) unstable; urgency=medium
+
+  * libsuperlu-dev depends on optimised BLAS from OpenBLAS or ATLAS
+    where available.
+  * add debian/tests (autopkgtest)
+  * Standards-Version: 4.3.0
+  * debhelper compatibility level 12
+    - update doc-base entry: docs from doc package are now installed
+      in the dev package dir /usr/share/doc/libsuperlu-dev
+  * debian/rules: drop unnecessary --parallel flag for dh
+  * debian/control: update Vcs tags to salsa.debian.org
+  * mark libsuperlu-doc as Multi-Arch: foreign
+
+ -- Drew Parsons <dparsons@debian.org>  Wed, 23 Jan 2019 18:10:37 +0100
+
+superlu (5.2.1+dfsg1-3) unstable; urgency=medium
+
+  * Team upload.
+  * Add spacing to package descriptions. Closes: #266560.
+  * Standards-Version: 4.1.1
+  * debhelper compatibility level 10
+
+ -- Drew Parsons <dparsons@debian.org>  Mon, 06 Nov 2017 16:06:59 +0800
+
+superlu (5.2.1+dfsg1-2) unstable; urgency=medium
+
+  * Thanks Christophe Prud'homme for your contributions to the earlier
+    versions of superlu.  Updating the Uploaders list now.
+    Closes: #835010.
+  * Upload superlu 5 to unstable. Closes: #823213.
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 03 Sep 2016 10:10:01 +0800
+
+superlu (5.2.1+dfsg1-1~exp1) experimental; urgency=medium
+  
+  * Team upload.
+
+  [ Nico Schlömer ]
+  * Update to SuperLU 5.2.1.
+    - new ABI (soname 5)
+  * Use CMake build.
+  * Migrate from libsuperlu-dbg to ddebs, bump debhelper build-dependency
+
+  [ Drew Parsons ]
+  * debian/patches/gnuinstalldirs.patch now applied upstream
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 28 May 2016 12:12:29 +0800
+
+superlu (4.3+dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+
+ -- Sébastien Villemot <sebastien@debian.org>  Wed, 26 Feb 2014 18:18:37 +0100
+
+superlu (4.3+dfsg-2) experimental; urgency=medium
+
+  * Team upload.
+  * Fix FTBFS in parallel mode.
+  * Multi-archify the package.
+
+ -- Sébastien Villemot <sebastien@debian.org>  Sun, 22 Dec 2013 21:46:26 +0100
+
+superlu (4.3+dfsg-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Sébastien Villemot ]
+  * Repackage the upstream tarball to remove non-free code (mc64{a,i}d
+    functions)
+  * As a consequence, provide stubs for these functions in no-mc64ad.patch:
+    if the removed functionality is used, the library will simply abort.
+  * Rename development package as libsuperlu-dev, as requested by ftpmasters.
+  * Document the removed functionality in README.Debian.
+  * debian/copyright: rewrite using machine-readable format 1.0.
+  * Use new scheme for BLAS dependencies.
+  * Remove the broken infrastructure for running tests from /usr/share/doc.
+  * Add new libsuperlu-doc package.
+  * debian/control: updated Standards-Version to 3.9.5
+  
+  [ Christophe Trophime ]
+  * New upstream release (Closes: #709165)
+  * debian/rules: 
+     - switch to debhelper
+     - simplify rules
+  * Add patch format-security.patch
+  * Add patch Makefile.patch
+  * Convert to 3.0 (quilt) source format
+
+  [ Daniel Leidert ]
+  * debian/control: Added Homepage field.
+    (Vcs-Svn): Fixed.
+    (Depends): ${Source-Version} is deprecated (make the package binNMU safe).
+  * debian/dirs: Dropped.
+  * debian/rules (clean): Fixed debian-rules-ignores-make-clean-error.
+
+  [ Christophe Prud'homme ]
+  * New upstream release (4.0)
+  * Fixed all lintian warnings
+
+ -- Sébastien Villemot <sebastien@debian.org>  Sat, 07 Dec 2013 14:31:50 +0100
+
+superlu (3.0+20070106-3) unstable; urgency=low
+
+  * debian/control: changed XS-Vcs-*  to Vcs-*
+  * Bug fix: "superlu: Please depend on libblas instead of refblas3",
+    thanks to Colin Tuckley (Closes: #462290).
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Fri, 22 Feb 2008 23:54:05 +0100
+
+superlu (3.0+20070106-2) unstable; urgency=low
+
+  [Christophe Prud'homme]
+  * debian/control: update Standards-Version, no change
+  * Bug fix: "superlu: Please depend on libblas instead of refblas3",
+    thanks to Colin Tuckley (Closes: #462290).
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Thu, 24 Jan 2008 10:22:42 +0100
+
+superlu (3.0+20070106-1) unstable; urgency=low
+
+  [ Rafael Laboissiere ]
+  * debian/control: Added XS-Vcs-Svn and XS-Vcs-Browser fields to the Source
+    section
+
+  [Christophe Prud'homme]
+  * New upstream release
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Sun, 15 Jul 2007 10:00:50 +0200
+
+superlu (3.0-5) unstable; urgency=low
+
+  * Reverted libsuperlu3-dev to libsuperlu-dev
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Fri,  7 Apr 2006 10:24:43 +0200
+
+superlu (3.0-4) unstable; urgency=low
+
+  * Changed libsuperlu3-dev to libsuperlu-dev
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Fri,  7 Apr 2006 10:01:06 +0200
+
+superlu (3.0-3) unstable; urgency=low
+
+  * Changed prudhomm@mit.edu  to prudhomm@debian.org
+  * Use pkg-scicomp-devel@lists.alioth.debian.org as new maintainer address
+
+ -- Christophe Prud'homme <prudhomm@debian.org>  Fri,  7 Apr 2006 09:49:25 +0200
+
+superlu (3.0-2) unstable; urgency=low
+
+  * fixed inconsistencies: libsuperlu3-dev vs libsuperlu-dev
+
+ -- Christophe Prud'homme <prudhomm@mit.edu>  Wed, 18 Aug 2004 09:26:10 +0200
+
+superlu (3.0-1) unstable; urgency=low
+
+  * Initial Release. (closes: #265217)
+
+ -- Christophe Prud'homme <prudhomm@mit.edu>  Thu, 12 Aug 2004 11:05:16 +0200
+
